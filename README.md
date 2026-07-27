@@ -1,4 +1,4 @@
-# OrangeFox device tree for OPlus kof
+# TWRP device tree for OPlus kof
 This device tree was build by [coolzyd9107](https://github.com/coolzyd9107) and [zhuzhuzihan](https://github.com/zhuzhuzihan).
 
 To clone the tree for twrp building, run this command in your twrp source code directory:
