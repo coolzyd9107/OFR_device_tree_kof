@@ -5,6 +5,7 @@ To clone the tree for twrp building, run this command in your twrp source code d
 ```bash
 git clone https://github.com/coolzyd9107/twrp_device_tree_kof.git device/oneplus/kof
 ```
+# Licenses
 ```
 #
 # Copyright (C) 2026 The Android Open Source Project
