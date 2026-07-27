@@ -1,0 +1,56 @@
+system       /system       erofs ro wait,slotselect,logical,first_stage_mount
+system       /system       ext4  ro wait,slotselect,logical,first_stage_mount
+system_ext   /system_ext   erofs ro wait,slotselect,logical,first_stage_mount
+system_ext   /system_ext   ext4  ro wait,slotselect,logical,first_stage_mount
+system_dlkm  /system_dlkm  erofs ro wait,slotselect,logical,first_stage_mount
+system_dlkm  /system_dlkm  ext4  ro wait,slotselect,logical,first_stage_mount
+vendor       /vendor       erofs ro wait,slotselect,logical,first_stage_mount
+vendor       /vendor       ext4  ro wait,slotselect,logical,first_stage_mount
+vendor_dlkm  /vendor_dlkm  erofs ro wait,slotselect,logical,first_stage_mount
+vendor_dlkm  /vendor_dlkm  ext4  ro wait,slotselect,logical,first_stage_mount
+product      /product      erofs ro wait,slotselect,logical,first_stage_mount
+product      /product      ext4  ro wait,slotselect,logical,first_stage_mount
+odm          /odm          erofs ro wait,slotselect,logical,first_stage_mount,nofail
+odm          /odm          ext4  ro wait,slotselect,logical,first_stage_mount,nofail
+odm_dlkm     /odm_dlkm     erofs ro wait,slotselect,logical,first_stage_mount,nofail
+odm_dlkm     /odm_dlkm     ext4  ro wait,slotselect,logical,first_stage_mount,nofail
+
+my_product      /my_product      erofs ro wait,slotselect,logical,first_stage_mount,nofail
+my_product      /my_product      ext4  ro wait,slotselect,logical,first_stage_mount,nofail
+my_engineering  /my_engineering  erofs ro wait,slotselect,logical,first_stage_mount,nofail
+my_engineering  /my_engineering  ext4  ro wait,slotselect,logical,first_stage_mount,nofail
+my_company      /my_company      erofs ro wait,slotselect,logical,first_stage_mount,nofail
+my_company      /my_company      ext4  ro wait,slotselect,logical,first_stage_mount,nofail
+my_carrier      /my_carrier      erofs ro wait,slotselect,logical,first_stage_mount,nofail
+my_carrier      /my_carrier      ext4  ro wait,slotselect,logical,first_stage_mount,nofail
+my_region       /my_region       erofs ro wait,slotselect,logical,first_stage_mount,nofail
+my_region       /my_region       ext4  ro wait,slotselect,logical,first_stage_mount,nofail
+my_heytap       /my_heytap       erofs ro wait,slotselect,logical,first_stage_mount,nofail
+my_heytap       /my_heytap       ext4  ro wait,slotselect,logical,first_stage_mount,nofail
+my_stock        /my_stock        erofs ro wait,slotselect,logical,first_stage_mount,nofail
+my_stock        /my_stock        ext4  ro wait,slotselect,logical,first_stage_mount,nofail
+my_preload      /my_preload      erofs ro wait,slotselect,logical,first_stage_mount,nofail
+my_preload      /my_preload      ext4  ro wait,slotselect,logical,first_stage_mount,nofail
+my_bigball      /my_bigball      erofs ro wait,slotselect,logical,first_stage_mount,nofail
+my_bigball      /my_bigball      ext4  ro wait,slotselect,logical,first_stage_mount,nofail
+my_manifest     /my_manifest     erofs ro wait,slotselect,logical,first_stage_mount,nofail
+my_manifest     /my_manifest     ext4  ro wait,slotselect,logical,first_stage_mount,nofail
+
+/dev/block/by-name/metadata /metadata f2fs noatime,nosuid,nodev,discard wait,check,formattable,first_stage_mount
+/dev/block/by-name/userdata /data f2fs noatime,nosuid,nodev,discard,noflush_merge,fsync_mode=nobarrier,reserve_root=134217,resgid=1065,inlinecrypt wait,check,formattable,quota,latemount,resize,reservedsize=128m,checkpoint=fs,fileencryption=aes-256-xts:aes-256-cts:v2+inlinecrypt_optimized,keydirectory=/metadata/vold/metadata_encryption,fsverity,fscompress,sysfs_path=/sys/devices/platform/soc/112b0000.ufshci
+
+/dev/block/by-name/oplusreserve2 /mnt/vendor/oplusreserve ext4 nosuid,nodev,noatime,barrier=1 wait,check,first_stage_mount,nofail
+/dev/block/by-name/protect1 /mnt/vendor/protect_f ext4 noatime,nosuid,nodev,noauto_da_alloc,commit=1,nodelalloc wait,check,formattable
+/dev/block/by-name/protect2 /mnt/vendor/protect_s ext4 noatime,nosuid,nodev,noauto_da_alloc,commit=1,nodelalloc wait,check,formattable
+/dev/block/by-name/nvdata /mnt/vendor/nvdata ext4 noatime,nosuid,nodev,noauto_da_alloc,commit=1,nodelalloc wait,check,formattable
+/dev/block/by-name/nvcfg /mnt/vendor/nvcfg ext4 noatime,nosuid,nodev,noauto_da_alloc,commit=1,nodelalloc wait,check,formattable
+/dev/block/by-name/persist /mnt/vendor/persist ext4 noatime,nosuid,nodev,noauto_da_alloc,commit=1,nodelalloc wait,check,formattable
+
+/dev/block/by-name/boot /boot emmc defaults first_stage_mount,nofail,slotselect
+/dev/block/by-name/vbmeta_vendor /vbmeta_vendor emmc defaults first_stage_mount,nofail,slotselect
+/dev/block/by-name/vbmeta_system /vbmeta_system emmc defaults first_stage_mount,nofail,slotselect
+
+/devices/platform/soc/11240000.mmc* auto auto defaults voldmanaged=sdcard1:auto
+/devices/platform/usb_xhci* auto vfat defaults voldmanaged=usbotg:auto
+/devices/platform/soc/11201000.usb0/11200000.xhci* auto vfat defaults voldmanaged=usbotg:auto
+/devices/platform/soc/11211000.usb1/11210000.xhci* auto vfat defaults voldmanaged=usbotg:auto

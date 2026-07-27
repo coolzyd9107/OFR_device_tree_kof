@@ -1,2 +1,10 @@
-# twrp_device_tree_kof
-TWRP device tree for kof (OnePlus Turbo 6X)
+# OrangeFox device tree for OPlus kof
+
+```
+#
+# Copyright (C) 2026 The Android Open Source Project
+# Copyright (C) 2026 SebaUbuntu's TWRP device tree generator
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+```
