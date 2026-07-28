@@ -7,3 +7,24 @@
 
 soong_namespace {
 }
+
+// TWRP 14.1 still uses these removed ndk_platform module names.
+cc_library_shared {
+    name: "android.security.apc-ndk_platform",
+    whole_static_libs: ["android.security.apc-ndk"],
+}
+
+cc_library_shared {
+    name: "android.security.authorization-ndk_platform",
+    whole_static_libs: ["android.security.authorization-ndk"],
+}
+
+cc_library_shared {
+    name: "android.security.maintenance-ndk_platform",
+    whole_static_libs: ["android.security.maintenance-ndk"],
+}
+
+cc_library_shared {
+    name: "android.system.keystore2-V1-ndk_platform",
+    whole_static_libs: ["android.system.keystore2-V1-ndk"],
+}

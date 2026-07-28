@@ -7,6 +7,9 @@
 
 LOCAL_PATH := device/oneplus/kof
 
+# Export device-local compatibility modules to Android.mk users.
+PRODUCT_SOONG_NAMESPACES += $(LOCAL_PATH)
+
 # Android 14 vendor interface
 PRODUCT_SHIPPING_API_LEVEL := 34
 PRODUCT_TARGET_VNDK_VERSION := 34
