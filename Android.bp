@@ -7,24 +7,3 @@
 
 soong_namespace {
 }
-
-// Alias TWRP's legacy ndk_platform names to the current NDK libraries.
-cc_library_shared {
-    name: "android.security.apc-ndk_platform",
-    shared_libs: ["android.security.apc-ndk"],
-}
-
-cc_library_shared {
-    name: "android.security.authorization-ndk_platform",
-    shared_libs: ["android.security.authorization-ndk"],
-}
-
-cc_library_shared {
-    name: "android.security.maintenance-ndk_platform",
-    shared_libs: ["android.security.maintenance-ndk"],
-}
-
-cc_library_shared {
-    name: "android.system.keystore2-V1-ndk_platform",
-    shared_libs: ["android.system.keystore2-V1-ndk"],
-}
